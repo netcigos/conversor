@@ -23,7 +23,7 @@ public class Principal {
                 7- Dolar USD -> Euro EUR
                 8- Euro EUR -> Dolar USD
                 9- Ingrese otro par Divisas ORIGEN/DESTINO Disponibles
-                10- Ingrese un Divisa Origen y Convierta a 161 Paises Disponibles
+                10- Ingrese un Divisa Origen y vea todas las tasas de conversion de 161 Paises Disponibles
                 11- Ver Historial recientes de conversiones
                 12- Salir
                 *************************************************               
@@ -44,6 +44,8 @@ public class Principal {
 
                 opcion = teclado.nextInt();
 
+
+                String divisaOrigen;
                 switch (opcion) {
 
                     case 1:
@@ -269,7 +271,7 @@ public class Principal {
                         System.out.println(listaDivisas);
 
                         System.out.println("Elija una Divisa XXX origen a convertir: ");
-                        String divisaOrigen= teclado.nextLine();
+                        divisaOrigen= teclado.nextLine();
 
 
                         System.out.println("Elija una Divisa XXX destino para el resultado de conversion:");
@@ -280,6 +282,17 @@ public class Principal {
 
 
                          conversion.conversionPar(divisaOrigen,divisaDestino,cantidadDivisa);
+
+                        break;
+                    case 10:
+                        teclado.nextLine();
+                        System.out.println("Elija una Divisa XXX origen para ver las tasas de conversiones de otros paises: ");
+                        divisaOrigen= teclado.nextLine();
+                        conversion.verTasasConversion(divisaOrigen);
+
+                        break;
+                    case 11:
+
 
                         break;
 
