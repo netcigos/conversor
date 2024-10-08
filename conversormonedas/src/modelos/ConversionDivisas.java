@@ -2,6 +2,9 @@ package modelos;
 
 import com.google.gson.Gson;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -11,6 +14,7 @@ import java.net.http.HttpTimeoutException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 public class ConversionDivisas {
 
@@ -34,11 +38,61 @@ public class ConversionDivisas {
     public void mostrarHistorialReciente()
     {
 
-        System.out.println(this.listaConversiones);
+        /*Si la lista a mostrar esta vacio se intenta leer el ultimo historial almacenado en el historial.txt
+        util por si se selecciona la opcion de mostrar historial reciente sin haber hecho una conversion aun
+        */
+        if(this.listaConversiones.isEmpty())
+        {
+           try {
+               File archivoLectura = new File("historial.txt");
 
+               Scanner lectura = new Scanner(archivoLectura);
+
+
+               while (lectura.hasNext())
+               {
+                   String linea= lectura.nextLine();
+                   System.out.println(linea);
+
+               }
+
+
+
+           }catch (FileNotFoundException e)
+           {
+               System.out.println("Archivo no encontrado.");
+               e.printStackTrace();
+
+           }
+
+
+        }else {
+            System.out.println(this.listaConversiones);
+
+        }
 
     }
 
+    public  void guardarHistorialReciente() {
+
+        if(!this.listaConversiones.isEmpty()) {
+            Gson gson = new Gson().newBuilder().setPrettyPrinting().create();
+
+
+            try {
+
+                FileWriter escritura = new FileWriter("historial.txt");
+                escritura.write(this.listaConversiones.toString());
+                escritura.close();
+
+
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+
+    }
 
 
     public void conversionPar(String divisaOrigen , String divisaDestino , double valor)

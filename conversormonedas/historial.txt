@@ -1,0 +1,4 @@
+[Fecha y Hora: 07-10-2024 22:38:41 - Divisa Origen:USD Cantidad: 1000.0 Divisa Destino: ARS Resultado: 975500.0 - Ratio: 975.5
+, Fecha y Hora: 07-10-2024 22:38:52 - Divisa Origen:ARS Cantidad: 50000.0 Divisa Destino: USD Resultado: 51.25 - Ratio: 0.001025
+, Fecha y Hora: 07-10-2024 22:39:04 - Divisa Origen:USD Cantidad: 300.0 Divisa Destino: BRL Resultado: 1637.4 - Ratio: 5.458
+]

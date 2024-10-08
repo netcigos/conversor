@@ -1,5 +1,6 @@
 import modelos.ConversionDivisas;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -303,6 +304,8 @@ public class Principal {
                         break;
 
                     case 12:
+
+                        conversion.guardarHistorialReciente();
                         System.out.println("Fin del Programa");
                         break;
 
@@ -320,10 +323,6 @@ public class Principal {
                 teclado.next();
 
             }
-
-
-
-
 
 
         }
