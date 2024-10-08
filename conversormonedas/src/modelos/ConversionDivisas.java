@@ -8,6 +8,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpTimeoutException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class ConversionDivisas {
@@ -19,6 +21,26 @@ public class ConversionDivisas {
 
      */
 
+    private List<Conversion> listaConversiones;
+
+    //Constructor
+    public ConversionDivisas() {
+
+        this.listaConversiones=new ArrayList<>();
+
+
+    }
+
+    public void mostrarHistorialReciente()
+    {
+
+        System.out.println(this.listaConversiones);
+
+
+    }
+
+
+
     public void conversionPar(String divisaOrigen , String divisaDestino , double valor)
     {
         //El valor convertido a la divisa destino
@@ -29,6 +51,7 @@ public class ConversionDivisas {
 
 
         Gson gson = new Gson().newBuilder().setPrettyPrinting().create();
+
 
 
         try {
@@ -51,6 +74,9 @@ public class ConversionDivisas {
             //Si la solicitud es exitosa
             if(statusCodigo==200) {
 
+
+                Conversion nuevaConverion= new Conversion(recordConversionPair,valor);
+                this.listaConversiones.add(nuevaConverion);
 
 
                 System.out.println("========================================================================================================================================");

@@ -23,8 +23,8 @@ public class Principal {
                 7- Dolar USD -> Euro EUR
                 8- Euro EUR -> Dolar USD
                 9- Ingrese otro par Divisas ORIGEN/DESTINO Disponibles
-                10- Ingrese un Divisa Origen y vea todas las tasas de conversion de 161 Paises Disponibles
-                11- Ver Historial recientes de conversiones
+                10-Ver Historial recientes de conversiones 
+                11-Ingrese un Divisa Origen y vea todas las tasas de conversion de 161 Paises Disponibles
                 12- Salir
                 *************************************************               
                 """;
@@ -285,14 +285,20 @@ public class Principal {
 
                         break;
                     case 10:
+
+                        System.out.println("===============================================================================");
+                        System.out.println("Historial reciente de las ultimas conversiones:");
+                        conversion.mostrarHistorialReciente();
+                        System.out.println("===============================================================================");
+
+
+                        break;
+
+                        case 11:
                         teclado.nextLine();
                         System.out.println("Elija una Divisa XXX origen para ver las tasas de conversiones de otros paises: ");
                         divisaOrigen= teclado.nextLine();
                         conversion.verTasasConversion(divisaOrigen);
-
-                        break;
-                    case 11:
-
 
                         break;
 
