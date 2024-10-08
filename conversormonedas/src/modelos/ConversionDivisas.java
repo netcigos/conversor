@@ -11,10 +11,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpTimeoutException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class ConversionDivisas {
 
@@ -67,6 +64,12 @@ public class ConversionDivisas {
 
 
         }else {
+
+            /*Ordena la lista de conversiones reciente en forma descendente.
+              Se muestran las conversiones recientes primeros
+            */
+
+            this.listaConversiones.sort(Comparator.comparing(Conversion::getFechaHoraConversion).reversed());
             System.out.println(this.listaConversiones);
 
         }
@@ -78,6 +81,11 @@ public class ConversionDivisas {
         if(!this.listaConversiones.isEmpty()) {
             Gson gson = new Gson().newBuilder().setPrettyPrinting().create();
 
+             /*Ordena la lista de conversiones reciente en forma descendente.
+              Se muestran las conversiones recientes primeros
+            */
+
+            this.listaConversiones.sort(Comparator.comparing(Conversion::getFechaHoraConversion).reversed());
 
             try {
 

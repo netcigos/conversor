@@ -9,6 +9,11 @@ public class Conversion {
     String divisaOrigen;
     String divisaDestino;
     Double rationConversion;
+
+    public LocalDateTime getFechaHoraConversion() {
+        return fechaHoraConversion;
+    }
+
     Double cantidad;
     Double resultadoConversion;
 
