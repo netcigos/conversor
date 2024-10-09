@@ -11,6 +11,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpTimeoutException;
+import java.text.DecimalFormat;
 import java.util.*;
 
 public class ConversionDivisas {
@@ -140,9 +141,10 @@ public class ConversionDivisas {
                 Conversion nuevaConverion= new Conversion(recordConversionPair,valor);
                 this.listaConversiones.add(nuevaConverion);
 
+                DecimalFormat formato = new DecimalFormat("#.####");
 
                 System.out.println("========================================================================================================================================");
-                System.out.println("La cantidad de " + valor + " " + divisaOrigen + " convertidos son " + recordConversionPair.conversion_result() + " " + divisaDestino
+                System.out.println("La cantidad de " + valor + " " + divisaOrigen + " convertidos son " +formato.format(recordConversionPair.conversion_result()) + " " + divisaDestino
 
                         + " - Ratio de Conversion: " + recordConversionPair.conversion_rate() + ", ultima actualizacion: " + recordConversionPair.time_last_update_utc());
                 System.out.println("=========================================================================================================================================");

@@ -1,6 +1,3 @@
-[Fecha y Hora: 08-10-2024 14:24:37 - Divisa Origen:EUR Cantidad: 300.0 Divisa Destino: USD Resultado: 329.19 - Ratio: 1.0973
-, Fecha y Hora: 08-10-2024 14:24:25 - Divisa Origen:BRL Cantidad: 700.0 Divisa Destino: USD Resultado: 128.24 - Ratio: 0.1832
-, Fecha y Hora: 08-10-2024 14:24:08 - Divisa Origen:USD Cantidad: 3000.0 Divisa Destino: BRL Resultado: 16374.0 - Ratio: 5.458
-, Fecha y Hora: 08-10-2024 14:23:56 - Divisa Origen:ARS Cantidad: 50000.0 Divisa Destino: USD Resultado: 51.25 - Ratio: 0.001025
-, Fecha y Hora: 08-10-2024 14:23:40 - Divisa Origen:USD Cantidad: 1000.0 Divisa Destino: ARS Resultado: 975500.0 - Ratio: 975.5
+[Fecha y Hora: 09-10-2024 13:43:41 - Divisa Origen:USD Cantidad: 50000.0 Divisa Destino: ARS Resultado: 4.8796E7 - Ratio: 975.92
+, Fecha y Hora: 09-10-2024 13:42:11 - Divisa Origen:PYG Cantidad: 3042000.0 Divisa Destino: USD Resultado: 388.58508 - Ratio: 1.2774E-4
 ]
