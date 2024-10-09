@@ -265,5 +265,98 @@ public class ConversionDivisas {
 
     }
 
+    //Muestra el valor del dolar blue la ultima actualisacion o el historico de un dia especifico
+    public void dolarBlueVerCotisacion(boolean historico , String fecha)
+    {
+        String url;
+
+        //Url de la api
+        if ((historico))
+        {
+            System.out.println("Precio Historico Dolar Blue, Fecha:"+fecha);
+            System.out.println("============================================================================");
+            url="https://api.bluelytics.com.ar/v2/historical?day="+fecha;
+
+        }
+        else {
+             url = "https://api.bluelytics.com.ar/v2/latest";
+
+        }
+
+        Gson gson = new Gson().newBuilder().setPrettyPrinting().create();
+
+
+        try {
+
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request= HttpRequest.newBuilder(URI.create(url)).build();
+
+            HttpResponse<String>  response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            int statusCodigo= response.statusCode();
+
+            //Recuperdando el json de la respuesta
+            String Json = response.body();
+
+            //System.out.println(Json);
+
+            //Pasando el Json a un records
+
+            RecordBlue recordCotisacion= gson.fromJson(Json, RecordBlue.class);
+
+            //Si la solicitud es exitosa
+            if(statusCodigo==200) {
+
+                System.out.println("Precios Dolar Blue (Argentina) - Ultima cotisacion:"+ recordCotisacion.last_update());
+                System.out.println("Referencias: value_avg (Precio promedio) - value_sell (Precio venta) - value_buy (Precio compra)");
+                System.out.println("============================================================================");
+                for(Map.Entry<String,Double> cotisacion : recordCotisacion.blue().entrySet())
+                {
+                    System.out.println(" Condicion :"+ cotisacion.getKey()+ " - Precio:"+cotisacion.getValue());
+
+
+                }
+
+                System.out.println("============================================================================");
+
+
+            } else if (statusCodigo==404) {
+
+                System.out.println(" Recurso no encontrado. Verifique si los datos ingresados son correctos.");
+                System.out.println(Json);
+
+
+            }
+            else {
+
+
+                System.out.println("Codigo de Respuestas inesperado "+statusCodigo);
+                System.out.println(Json);
+
+
+            }
+
+
+        } catch (HttpTimeoutException e) {
+            // Captura si la solicitud supera el tiempo de espera
+            System.out.println("La solicitud superó el tiempo de espera: " + e.getMessage());
+        } catch (IOException e) {
+            // Captura errores relacionados con I/O, como problemas de red
+            System.out.println("Error de Red o entrada/salida: " + e.getMessage());
+        } catch (InterruptedException e) {
+            // Captura si el hilo es interrumpido
+            System.out.println("La solicitud fue interrumpida: " + e.getMessage());
+        } catch (Exception e) {
+            // Captura cualquier otra excepción
+            System.out.println("Ocurrió un error: " + e.getMessage());
+        }
+
+
+
+
+
+    }
+
+
 
 }

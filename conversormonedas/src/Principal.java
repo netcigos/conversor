@@ -1,6 +1,9 @@
 import modelos.ConversionDivisas;
 
+import javax.sound.midi.Soundbank;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -26,7 +29,10 @@ public class Principal {
                 9- Ingrese otro par Divisas ORIGEN/DESTINO Disponibles
                 10-Ver Historial recientes de conversiones 
                 11-Ingrese un Divisa Origen y vea todas las tasas de conversion de 161 Paises Disponibles
-                12- Salir
+                12- Dolar Blue (Paralelo)Argentina -> Pesos Argentinos
+                13- Ver ultima Cotisacion Dolar Blue Argentina
+                14- Ver Dolar Blue Valor historico de un dia especifico   
+                15- Salir
                 *************************************************               
                 """;
 
@@ -302,8 +308,32 @@ public class Principal {
                         conversion.verTasasConversion(divisaOrigen);
 
                         break;
+                    case 13:
+                        conversion.dolarBlueVerCotisacion(false,"");
 
-                    case 12:
+                        break;
+                    case 14:
+
+
+                    System.out.println("Ingrese la Fecha en formato YYYY-MM-DD , ejemplo 2024-08-10");
+                    System.out.println("Ingrese un valor para el  Año:");
+                    int ano= teclado.nextInt();
+                    System.out.println("Ingrese un valor para el Mes:");
+                    int mes= teclado.nextInt();
+                    System.out.println("Ingrese un valor para el Dia");
+                    int dia= teclado.nextInt();
+
+
+                        LocalDate fecha = LocalDate.of(ano, mes, dia);
+                        DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+                        String fechaFormateada = fecha.format(formato);
+
+                    conversion.dolarBlueVerCotisacion(true,fechaFormateada);
+                    break;
+
+
+                    case 15:
 
                         conversion.guardarHistorialReciente();
                         System.out.println("Fin del Programa");
