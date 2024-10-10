@@ -46,4 +46,9 @@ Hace uso de las api https://www.exchangerate-api.com/ para la conversion en tiem
 ![usdars](https://github.com/user-attachments/assets/9d9ff95c-4758-4784-9ae7-8dbe555ed1cf)
 ##Historial
 ![historial](https://github.com/user-attachments/assets/1a7b798c-9b97-4209-9055-86be08b94106)
+##Cotizacion Dolar Blue
+![blue](https://github.com/user-attachments/assets/fdfad871-83c7-452b-880c-e31e1f32e9be)
+##Lista de Rations de otros paises
+![lista](https://github.com/user-attachments/assets/eaf61f75-895b-481c-ae72-24caac08dbef)
+
 
