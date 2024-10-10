@@ -35,7 +35,15 @@ Hace uso de las api https://www.exchangerate-api.com/ para la conversion en tiem
 1. Clonar el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/aplicacion-conversion-divisas.git
+   git clone [https://github.com/netcigos/conversor.git]
+
+2. Descargar el archivo Jar de la siguiente direccion:
+   www.cigos.com.ar/java/conversormonedas.jar
 
 ## Pantallas 
 ![menu](https://github.com/user-attachments/assets/9132e2c5-f41b-4c4d-b46f-5f7ae56c6e59)
+##Ejemplo de Dolar USD a Pesos Argentino
+![usdars](https://github.com/user-attachments/assets/9d9ff95c-4758-4784-9ae7-8dbe555ed1cf)
+##Historial
+![historial](https://github.com/user-attachments/assets/1a7b798c-9b97-4209-9055-86be08b94106)
+
